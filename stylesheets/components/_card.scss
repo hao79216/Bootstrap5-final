@@ -1,0 +1,62 @@
+//卡片效果 - 首頁-認養專區
+.card-effect {
+    // 陰影
+    box-shadow: $box-shadow-sm;
+
+    &:hover {
+        box-shadow: $box-shadow;
+    }
+
+    // 圖片
+    & .card-img-front {
+        display: block;
+    }
+
+    & .card-img-back {
+        display: none;
+    }
+
+    &:hover .card-img-front {
+        display: none;
+    }
+
+    &:hover .card-img-back {
+        display: block;
+    }
+
+    // a標籤
+    & a {
+        color: $dark;
+    }
+
+    &:hover a {
+        color: $primary;
+    }
+}
+
+//卡片遮罩 - 首頁-近期作品
+.card-effect-mask {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    background-image: linear-gradient(180deg, #00000000 0%, #0000005D 100%);
+    opacity: 0;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+// 服務-step
+.card-img-service {
+    width: 100px;
+    height: 98px;
+
+    @include media-breakpoint-up(sm) {
+        width: 204px;
+        height: 200px;
+    }
+}

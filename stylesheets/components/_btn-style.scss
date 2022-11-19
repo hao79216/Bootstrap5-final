@@ -1,0 +1,110 @@
+//home
+.btn {
+
+    // 導覽列-毛孩似顏繪btn 
+    &-nav:hover {
+        background-color: $primary;
+        border-bottom: 3px solid $dark;
+    }
+
+    // 聯絡-認養區塊 
+    &-outline-dark:hover {
+        background-color: $primary;
+        border-color: $primary;
+        color: $dark;
+    }
+}
+
+//客製我的毛孩圖btn (固定右下)
+.speech-frame {
+    position: relative;
+    background-color: $white;
+    border: 2px solid $dark;
+    border-radius: 8px;
+    padding: 8px 24px;
+
+    &::before {
+        position: absolute;
+        content: "";
+        left: 50%;
+        bottom: -10px;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-width: 10px 10px 0;
+        border-style: solid;
+        border-color: $dark transparent;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        left: 50%;
+        bottom: -7.5px;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-width: 7.5px 7.5px 0;
+        border-style: solid;
+        border-color: $white transparent;
+
+    }
+}
+
+//客製毛孩圖-替換圖片
+.speech-img {
+    width: 142px;
+    height: 152px;
+    background-image: url(../images/btn.png);
+
+    &:hover {
+        background-image: url(../images/btn2.png);
+    }
+}
+
+
+//project -側邊欄按鈕效果
+.aside-item{
+    color: $dark;
+    &:hover {
+        color: $primary;
+    }
+
+    &-line{
+        display: none;   
+    }
+}
+.aside-item.active {
+    color: $primary;
+}
+
+@include media-breakpoint-up(lg) {
+    .aside-item {
+        color: $dark;
+
+        &-line {
+            display: inline-block;
+            opacity: 0;
+            margin-left: -16px;
+            transition: all .3s ease-in-out;
+        }
+
+        &:hover {
+            color: $primary;
+
+            .aside-item-line {
+                opacity: 1;
+                margin-left: 0;
+            }
+        }
+    }
+
+    .aside-item.active {
+        // color: $primary;
+
+        .aside-item-line {
+            opacity: 1;
+            margin-left: 0;
+        }
+    }
+}

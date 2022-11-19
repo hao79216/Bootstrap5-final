@@ -1,0 +1,34 @@
+// 大 header (home)
+.header {
+    background-image: url(../images/home_mobile.png);
+    max-width: 100%;
+    min-height: 635px;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+
+}
+@include media-breakpoint-up(md) {
+    .header {
+        background-image: url(../images/home.png);
+        background-size: cover;
+        background-position: center center;
+        padding-top: 25%;
+        padding-bottom: 25%;
+    }
+}
+
+// 小 header (index的作品、認養專區 project,adopt 的header)
+.title{
+    width: 150px;
+    height: auto;
+}
+
+@include media-breakpoint-up(sm) {
+    .title{
+        width: 250px;
+        height: auto;
+    }
+}
+    
+
